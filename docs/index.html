@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <title>stamp studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+
+</head>
+<style>
+  header {
+    background-color: #778899;
+    padding-top: 30px;
+    padding-left: 30px;
+    height: 25%;
+    padding-bottom: 50px;
+  }
+
+  img {
+    padding-top: 10px;
+
+  }
+
+  body {
+    background-color: #778899;
+  }
+
+  footer {
+    font-family: monospace;
+    padding-top: 350px;
+  }
+
+  #webcam,
+  #canvas {
+    position: absolute;
+    left: 0px;
+    top: 80px;
+    height: 400px;
+    width: 400px;
+  }
+
+
+  #colors {
+
+    border: none;
+    outline: none;
+    color: transparent;
+    text-shadow: 0 0 0 transparent;
+    background-color: transparent;
+    background-image: url('./images/color.png');
+    background-size: cover;
+    padding-left: 75px;
+    padding-bottom: 27px;
+    transform: translate(90%, -70%);
+    margin-left: 30px;
+  }
+
+
+  #stampSelect {
+    border: none;
+    outline: none;
+    color: transparent;
+    text-shadow: 0 0 0 transparent;
+    background-color: transparent;
+    background-image: url('./images/selectstamp.png');
+    background-size: cover;
+    padding-bottom: 27px;
+    transform: translate(110%, -50%);
+  }
+
+
+  #container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* aspect ratio 4:3 */
+    padding-left: 80px;
+    overflow: hidden;
+
+
+
+  }
+
+  #webcamButton {
+    border: none;
+    outline: none;
+    color: transparent;
+    text-shadow: 0 0 0 transparent;
+    background-color: transparent;
+
+
+
+
+    position: absolute;
+    top: 850px;
+    left: 189px;
+    transform: translate(-50%, -50%);
+    background-image: url('./images/haikei.png');
+    background-size: cover;
+    padding-right: 45px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    width: 200px;
+    height: 60px;
+    margin-left: 30px;
+    z-index: 1;
+
+
+  }
+
+  #webcamButton:hover {
+
+    cursor: pointer;
+  }
+</style>
+
+
+<header>
+  <img src="./images/title.png" alt="stampstudio" width="400" height="80">
+</header>
+
+<body>
+
+  <select id="colors">
+    <option value="white"></option> <!-- 初期の背景色は白 -->
+  </select>
+
+
+  <div class="gallery">
+    <!-- あらかじめWebサイトに表示されている画像を選択するためのセレクトボックス -->
+    <select id="stampSelect">
+      <option value="" selected disabled>Stamp</option>
+      <option value="./images/stamp1.png">カラフルお花</option>
+      <option value="./images/stamp2.png">ピンクお花</option>
+      <option value="./images/stamp3.png">クリームソーダ</option>
+      <option value="./images/stamp4.png">プリン</option>
+      <option value="./images/stamp5.png">サングラス</option>
+      <option value="./images/stamp6.png">チューリップ白</option>
+      <option value="./images/stamp7.png"> チューリップピンク</option>
+      <option value="./images/stamp8.png">ハート</option>
+      <option value="./images/stamp9.png">目玉焼き</option>
+      <!-- 他のスタンプ画像のパスをoption要素として追加 -->
+    </select>
+  </div>
+
+
+
+</body>
+
+<button id="webcamButton">
+  backgro
+</button>
+<div id="container">
+  <video id="webcam" autoplay playsinline></video>
+  <div id="canvas" autoplay playsinline></div>
+</div>
+
+<!-- include js libraries -->
+<script src="./js/p5.js"></script>
+<script src="./js/sketch.js"></script>
+<script type="module" src="./js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ml5.js/1.0.0/ml5.min.js"></script>
+
+<footer>
+  designed by Suzuki Chihiro
+</footer>
+
+</body>
+
+
+</html>
